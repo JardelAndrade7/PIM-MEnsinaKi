@@ -15,4 +15,20 @@ public class AlunoController {
         modelAndView.setViewName(viewName);
         return modelAndView;
     }
+
+    @GetMapping("/seeFeed")
+    public ModelAndView seeFeed () {
+        ModelAndView modelAndView = new ModelAndView();
+        String viewName = "aluno/feed";
+        modelAndView.setViewName(viewName);
+        return modelAndView;
+    }
+
+    @GetMapping("/tryUpdate")
+    public ModelAndView tryUpdate () {
+        ModelAndView modelAndView = new ModelAndView();
+        String viewName = "aluno/update";
+        modelAndView.setViewName(viewName);
+        return modelAndView;
+    }
 }
