@@ -10,7 +10,6 @@ body {
     height: 100vh;
 }
 
-/* Sidebar */
 .sidebar {
     width: 240px;
     background-color: green;
@@ -41,7 +40,6 @@ body {
     text-decoration: underline;
 }
 
-/* Content Area */
 .content {
     margin-left: 150px;
     padding: 20px;

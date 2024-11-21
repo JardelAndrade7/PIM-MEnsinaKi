@@ -10,11 +10,10 @@ body {
     height: 100vh;
 }
 
-/* Content Area */
 .content {
-    margin-left: 250px;
+    margin-left: 50px;
     padding: 20px;
-    width: 60%;
+    width: 100%;
     margin-top: 80px;
 }
 
