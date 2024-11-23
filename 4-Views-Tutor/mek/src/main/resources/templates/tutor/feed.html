@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEK - Feed Tutor</title>
+    <link th:href="@{/tutor/feed.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Feed do Tutor</h1>
+        <ul>
+            <li><a href="/">Início</a></li>
+            <li><a href="/sugestao/tryCreate">Criar Sugestão</a></li>
+            <li><a href="/sugestao/seeTutorList">Minhas Sugestões</a></li>
+            <li><a href="/tutor/tryUpdate">Perfil</a></li>
+            <li>
+                <form action="/">
+                    <button type="submit" class="logoutButton">Sair</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Área</th>
+                    <th>Modelo</th>
+                    <th>Ambiente</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -15,4 +15,20 @@ public class TutorController {
         modelAndView.setViewName(viewName);
         return modelAndView;
     }
+
+    @GetMapping("/seeFeed")
+    public ModelAndView seeFeed () {
+        ModelAndView modelAndView = new ModelAndView();
+        String viewName = "tutor/feed";
+        modelAndView.setViewName(viewName);
+        return modelAndView;
+    }
+
+    @GetMapping("/tryUpdate")
+    public ModelAndView tryUpdate () {
+        ModelAndView modelAndView = new ModelAndView();
+        String viewName = "tutor/update";
+        modelAndView.setViewName(viewName);
+        return modelAndView;
+    }
 }
