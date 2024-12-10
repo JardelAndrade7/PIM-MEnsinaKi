@@ -1,0 +1,12 @@
+5 - Model - Data - Repository
+
+
+
+
+Models Tutor e Aluno.
+
+Conexão com Banco de Dados por meio de uma classe de configuração e de anotações nos models.
+
+Repositories para os models.
+
+Data Transfer Object para o Login.
