@@ -1,0 +1,40 @@
+6 - Cadastro - Login
+
+
+
+
+Implementado
+
+    Cadastro
+
+        Tutor e Aluno.
+
+    Login
+
+        Tutor e Aluno.
+
+    LogOut
+
+        Tutor e Aluno.
+
+        De todas as páginas de cada um.
+
+    Rotas
+
+        Rotas e seus métodos adapdatos para Cadastro e Login funcionarem.
+
+    Service
+
+        Classes Service e Exception.
+
+    Token
+
+        Token de sessão.
+
+    Filter
+
+        Filter de acesso para a página inicial.
+
+Retirado
+
+    View viewsList.
