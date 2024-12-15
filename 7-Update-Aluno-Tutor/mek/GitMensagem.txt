@@ -1,0 +1,36 @@
+7 - Update - Aluno - Tutor
+
+
+
+
+Implementado
+
+    Update
+
+        Aluno e Tutor.
+
+    Views erro
+
+        Login errors.
+        
+        Less longin.
+    
+        Cadastro tutor. 
+        
+        Atualização tutor.
+
+    Verificacao - Rotas - Sessao
+
+        Verificação nas rotas de acesso e do Aluno se o usuário está com a sessão ativa.
+
+    Refatoração nas rotas get
+
+        Não enviar mais um ModelAluno ou um ModelTutor para a view.
+
+        ModelAndView como parâmetro.
+
+Retirado
+
+    Filter
+
+        Retirada do Filter de verificação de sessão ativa.

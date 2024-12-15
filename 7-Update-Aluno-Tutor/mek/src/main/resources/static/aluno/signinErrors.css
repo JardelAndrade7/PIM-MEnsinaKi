@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.center-content {
+    text-align: center;
+    border: 4px solid #ccc;
+    border-color: green;
+    border-radius: 5px;
+    padding: 50px;
+}
+
+  .btn-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: green;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn-link:hover {
+    background-color: #555;
+  }
