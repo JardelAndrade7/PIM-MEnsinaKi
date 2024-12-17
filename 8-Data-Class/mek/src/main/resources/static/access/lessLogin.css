@@ -2,7 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* 100% da altura da tela */
+    height: 100vh;
     margin: 0;
 }
 

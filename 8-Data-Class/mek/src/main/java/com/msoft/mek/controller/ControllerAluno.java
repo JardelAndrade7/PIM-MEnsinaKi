@@ -36,7 +36,6 @@ public class ControllerAluno {
 
     @PostMapping("/saveSignin")
     public ModelAndView saveSignin(@Valid ModelAluno modelAluno, BindingResult binding, ModelAndView modelAndView) throws Exception {
-
         if (binding.hasErrors()) {
             String errors = "errors";
             String viewName = "aluno/signinErrors";
@@ -45,9 +44,9 @@ public class ControllerAluno {
             return modelAndView;
         }
         else {
-            String viewName = "redirect:/accessTryLogin";
-            serviceAluno.saveSignin(modelAluno);
+            String viewName = "access/login";
             modelAndView.setViewName(viewName);
+            serviceAluno.saveSignin(modelAluno);
             return modelAndView;
         }
     }

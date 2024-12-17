@@ -16,7 +16,7 @@ public class DataConfiguration {
     public DataSource dataSource (){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/mek_pim");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/mek_pim_class?createDatabaseIfNotExist=true");
         dataSource.setUsername("root");
         dataSource.setPassword("mjgxt219my");
         return dataSource;

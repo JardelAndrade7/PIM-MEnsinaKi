@@ -1,0 +1,25 @@
+8 - Data - Class
+
+
+
+
+Retirado
+
+    Conexão banco properties.
+
+    Flyway pom.
+    
+    v1 sql.
+
+    GerenationType.IDENTITY.
+
+Implementado
+
+    Conexão banco classe.
+
+    GerenationType.AUTO.
+
+    Implements Serializable.
+
+    Long serialVersionUID.
+

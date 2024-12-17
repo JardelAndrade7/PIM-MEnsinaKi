@@ -46,9 +46,9 @@ public class ControllerTutor {
             return modelAndView;
         }
         else {
-            String viewName = "redirect:/accessTryLogin";
-            serviceTutor.saveSignin(modelTutor);
+            String viewName = "access/login";
             modelAndView.setViewName(viewName);
+            serviceTutor.saveSignin(modelTutor);
             return modelAndView;
         }
     }
@@ -82,8 +82,7 @@ public class ControllerTutor {
     } // doUpdate
 
     @PostMapping("/saveUpdate")
-    public ModelAndView saveUpdate (@Valid ModelTutor updating, BindingResult binding) throws Exception {
-        ModelAndView modelAndView = new ModelAndView();
+    public ModelAndView saveUpdate (@Valid ModelTutor updating, BindingResult binding, ModelAndView modelAndView) throws Exception {
 
         if (binding.hasErrors()) {
             String errors = "errors";

@@ -155,9 +155,8 @@ public class ControllerAccess {
         cookie.setPath("/");
         response.addCookie(cookie);
 
-        String viewName = "redirect:/accessTryLogin";
+        String viewName = "access/login";
         modelAndView.setViewName(viewName);
-
         return modelAndView;
     }
 
