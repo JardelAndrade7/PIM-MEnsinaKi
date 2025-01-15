@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="UTF-8">
+        <title>MEK - Erro Atualização Cadastro Aluno</title>
+        <link th:href="@{/aluno/atualizacaoSigninErrors.css}" rel="stylesheet"/>
+    </head>
+    <body>
+
+        <div class="sidebar">
+            <h1>Erro na Atualização do Cadastro do Aluno</h1>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="/solicitacao/doCreate">Criar Solicitação</a></li>
+                <li><a href="/solicitacao/readAlunoList">Minhas Solicitações</a></li>
+                <li><a href="/aluno/doUpdate">Perfil</a></li>
+                <li>
+                    <form action="/accessLogout" method="post">
+                        <button type="submit" class="logoutButton">Sair</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+
+        <div class="centered-box">
+            <h1>Erros na Atualização de Cadastro do Aluno</h1>
+            <ul>
+                <li th:each="error : ${errors}" th:text="${error.defaultMessage}"></li>
+            </ul>
+            <a href="/aluno/doUpdate" class="btn-link">Tentar de novo</a>
+        </div>
+    </body>
+</html>
