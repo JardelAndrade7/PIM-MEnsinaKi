@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MekApplication<mek>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.msoft.mek.MekApplication",
+            "projectName": "mek",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
