@@ -1,0 +1,16 @@
+11 - Init Serie Area
+
+
+
+
+Init Serie Area
+
+    Correção na metodologia de inicialização de séries e áreas para que aluno e tutor possam selecionar séries e áreas pré-existentes no sistema.
+
+    Antes
+
+        data.sql, data.json.
+
+    Agora
+
+        Class Configuration Bean.
