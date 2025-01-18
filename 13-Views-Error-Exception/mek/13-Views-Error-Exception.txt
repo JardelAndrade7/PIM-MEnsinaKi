@@ -1,0 +1,29 @@
+Views Error Exception
+
+    Aluno
+
+        Views updateEmailError, updateEmailException, updatePasswError, updatePasswExceptions.
+
+    Tutor
+
+        Views updateEmailError, updateEmailException, updatePasswError, updatePasswExceptions.
+
+howToUse
+
+    Não logado.
+
+    Aluno.
+
+    Tutor.
+
+what Is
+
+    Não logado.
+
+    Aluno.
+
+    Tutor.
+
+Margin form
+
+    signin tutor e aluno.

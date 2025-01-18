@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEK - Feed do Aluno</title>
+    <link th:href="@{/aluno/feed.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Feed do Aluno</h1>
+        <ul>
+            <li><a href="/">Início</a></li>
+            <li><a href="/solicitacao/doCreate">Criar Solicitação</a></li>
+            <li><a href="/solicitacao/readAlunoList">Minhas Solicitações</a></li>
+            <li><a href="/aluno/readOne">Perfil</a></li>
+            <li>
+                <form action="/accessLogout" method="post">
+                    <button type="submit" class="logoutButton">Sair</button>
+                </form>
+            </li>
+
+            <div class="spacer"></div>
+
+            <li><a href="/public/whatIs">O que é o MEnsinaKi</a></li>
+            <li><a href="/public/howToUse">Como usar o MEnsinaKi</a></li>
+
+            <li><h3>Contato</h3></li>
+            <li><p>mensinaki@gmail.com</p></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Modelo</th>
+                        <th>Local</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="sugestao:${sugestoes}">
+
+                        <td>
+                            <a
+                                th:href="@{/sugestao/readOne/{sugestaoId}(sugestaoId=${sugestao.sugestaoId})}"
+                                th:text="${sugestao.title}">
+                            </a>
+                        </td>
+
+                        <td><span th:text="${sugestao.modelo}"></span></td>
+                        <td><span th:text="${sugestao.local}"></span></td>
+                        <td><span th:text="${sugestao.price}"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination">
+            <ul>
+                <li th:if="${page == 0}">
+                    <a>Anterior</a>
+                </li>
+
+                <li th:if="${page > 0}">
+                    <a th:href="@{/sugestao/readByArea/{areaId}(areaId=${areaId}, page=${page - 1})}">Anterior</a>
+                </li>
+
+                <li>
+                    <a>
+                        <span th:text="'Página Atual (' + (${page + 1}) + ')'"></span>
+                    </a>
+                </li>
+
+                <li th:if="${totalPages == 0}">
+                    <a>
+                        <span th:text="'Total de Páginas (' + (${totalPages + 1}) + ')'"></span>
+                    </a>
+                </li>
+
+                <li th:if="${totalPages > 0}">
+                    <a>
+                        <span th:text="'Total de Páginas (' + (${totalPages}) + ')'"></span>
+                    </a>
+                </li>
+
+                <li th:if="${page < totalPages - 1}">
+                    <a th:href="@{/sugestao/readByArea/{areaId}(areaId=${areaId}, page=${page + 1})}">Próxima</a>
+                </li>
+
+                <li th:if="${page >= totalPages - 1}">
+                    <a>Próxima</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

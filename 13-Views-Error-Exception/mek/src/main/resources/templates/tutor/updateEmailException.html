@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="UTF-8">
+        <title>MEK - Exceção Atualização Email Tutor</title>
+        <link th:href="@{/tutor/updateEmailException.css}" rel="stylesheet"/>
+    </head>
+    <body>
+
+        <div class="sidebar">
+            <h1>Exceção na Atualização do Email do Tutor</h1>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="/sugestao/doCreate">Criar Sugestão</a></li>
+                <li><a href="/sugestao/readTutorList">Minhas Sugestões</a></li>
+                <li><a href="/tutor/readOne">Perfil</a></li>
+                <li>
+                    <form action="/accessLogout" method="post">
+                        <button type="submit" class="logoutButton">Sair</button>
+                    </form>
+                </li>
+
+                <div class="spacer"></div>
+
+                <li><a href="/public/whatIs">O que é o MEnsinaKi</a></li>
+                <li><a href="/public/howToUse">Como usar o MEnsinaKi</a></li>
+    
+                <li><h3>Contato</h3></li>
+                <li><p>mensinaki@gmail.com</p></li>
+            </ul>
+        </div>
+
+        <div class="centered-box">
+            <h1>Exceção na Atualização do Email do Tutor</h1>
+            <ul>
+                <li th:text="${error}"></li>
+            </ul>
+            <a href="/aluno/readOne" class="btn-link">Tentar de novo</a>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="UTF-8">
+        <title>MEK - Erro Criação Solicitação</title>
+        <link th:href="@{/solicitacao/createErrors.css}" rel="stylesheet"/>
+    </head>
+    <body>
+
+        <div class="sidebar">
+            <h1>Erro na Criação da Solicitação</h1>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="/solicitacao/doCreate">Criar Solicitação</a></li>
+                <li><a href="/solicitacao/readAlunoList">Minhas Solicitações</a></li>
+                <li><a href="/aluno/readOne">Perfil</a></li>
+                <li>
+                    <form action="/accessLogout" method="post">
+                        <button type="submit" class="logoutButton">Sair</button>
+                    </form>
+                </li>
+
+                <div class="spacer"></div>
+
+                <li><a href="/public/whatIs">O que é o MEnsinaKi</a></li>
+                <li><a href="/public/howToUse">Como usar o MEnsinaKi</a></li>
+    
+                <li><h3>Contato</h3></li>
+                <li><p>mensinaki@gmail.com</p></li>
+            </ul>
+        </div>
+
+        <div class="centered-box">
+            <h1>Erros na Criação da Solicitação</h1>
+            <ul>
+                <li th:each="error : ${errors}" th:text="${error.defaultMessage}"></li>
+            </ul>
+            <a href="/solicitacao/doCreate" class="btn-link">Tentar de novo</a>
+        </div>
+    </body>
+</html>
