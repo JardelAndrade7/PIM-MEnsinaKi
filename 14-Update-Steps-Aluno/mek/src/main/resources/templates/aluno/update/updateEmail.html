@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEK - Atualização E-mail Aluno</title>
+    <link th:href="@{/aluno/update/updateEmail.css}" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="sidebar">
+    <h1>Atualização do E-mail do Aluno</h1>
+    <ul>
+        <li><a href="/">Início</a></li>
+        <li><a href="/solicitacao/doCreate">Criar Solicitação</a></li>
+        <li><a href="/solicitacao/readAlunoList">Minhas Solicitações</a></li>
+        <li><a href="/aluno/readOne">Perfil</a></li>
+        <li>
+            <form action="/accessLogout" method="post">
+                <button type="submit" class="logoutButton">Sair</button>
+            </form>
+        </li>
+
+        <div class="spacer"></div>
+
+        <li><a href="/public/whatIs">O que é o MEnsinaKi</a></li>
+        <li><a href="/public/howToUse">Como usar o MEnsinaKi</a></li>
+
+        <li><h3>Contato</h3></li>
+        <li><p>mensinaki@gmail.com</p></li>
+    </ul>
+</div>
+
+<div class="content">
+    <div class="form-container">
+        <form action = "/aluno/saveUpdateEmail" method="post" th:object="${dtoAlunoDetails}">
+
+            <label for="formAlunoId" id="formAlunoId">Código</label>
+            <input type="hidden" id="formAlunoId" name="alunoId" th:field="*{alunoId}">
+
+            <label for="formAlunoId" id="formAlunoId">Nome</label>
+            <input type="hidden" id="formAlunoId" name="alunoName" th:field="*{alunoName}">
+
+            <label for="formAlunoId" id="formAlunoId">Série (A última ou a atual)</label>
+            <input type="hidden" id="formAlunoId" name="serie" th:field="*{serie}">
+
+            <label for="formAlunoId" id="formAlunoId">Área de Maior Dificuldade</label>
+            <input type="hidden" id="formAlunoId" name="areaDificuldade" th:field="*{areaDificuldade}">
+
+            <label for="formAlunoId" id="formAlunoId">Idade</label>
+            <input type="hidden" id="formAlunoId" name="idade" th:field="*{idade}">
+
+            <label for="alunoEmail">Novo E-mail</label>
+            <input type="email" id="alunoEmail" name="alunoEmail">
+
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEK - Cadastro Email Aluno</title>
+    <link th:href="@{/aluno/signin/signinEmail.css}" rel="stylesheet"/>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h1>Cadastro de Email do Aluno</h1>
+        <ul>
+            <li><a href="/">Início</a></li>
+
+            <li><a href="/public/whatIs">O que é o MEnsinaKi</a></li>
+            <li><a href="/public/howToUse">Como usar o MEnsinaKi</a></li>
+
+            <div class="spacer"></div>
+
+            <li><h3>Contato</h3></li>
+            <li><p>mensinaki@gmail.com</p></li>
+
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="form-container">
+            <h1>Cadastro de Email do Aluno</h1>
+            <form action="/aluno/saveSigninEmail" method="post" th:object="${dtoAlunoDetails}">
+                <label id="hidden" for="nome">Nome</label>
+                <input type="hidden" id="nome" name="alunoName" value="" th:field="*{alunoName}">
+
+                <label id="hidden">Série (A Última ou a Atual)</label>
+                <input type="hidden" id="serie" name="serie" value="" th:field="*{serie}">
+
+                <label id="hidden">Área de Maior Dificuldade</label>
+                <input type="hidden" id="areaDificuldade" name="areaDificuldade" value="" th:field="*{areaDificuldade}">
+
+                <label id="hidden" for="idade">Idade</label>
+                <input type="hidden" id="idade" name="idade" value="" th:field="*{idade}">
+
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="alunoEmail" value="">
+
+                <button type="submit">Próximo</button>
+                <a href="/accessTryLogin">Voltar</a>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
