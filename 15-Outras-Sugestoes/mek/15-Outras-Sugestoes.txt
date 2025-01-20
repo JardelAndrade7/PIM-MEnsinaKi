@@ -1,0 +1,20 @@
+Outras Sugestoes
+
+    A rota area/readAll leva para a página de escolha de área.
+
+    Quando uma área é escolhida, a página que lista as sugestões relacionadas àquela área é mostrada.
+
+    O botão "Outras sugestões" referencia a area/readAll.
+
+    O botão foi adicionada no feed e no readOne do aluno.
+
+
+
+
+Diminuição Sidebar
+
+    Diminuição dos tamanhos dos textos da sidebar.
+
+    Títulos h2 e h3 adicionados nas views de acesso, na feed, na updateDetails e na readOne do aluno.
+
+    Ou seja, as alterações foram feitas tanto nos htmls relacionados como nos csss.

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEK - Cadastro Detalhes Tutor</title>
+    <link th:href="@{/tutor/signin/signinDetails.css}" rel="stylesheet"/>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h1>Cadastro de Detalhes do Tutor</h1>
+        <ul>
+            <li><a href="/">Início</a></li>
+
+            <li><a href="/public/whatIs">O que é o MEnsinaKi</a></li>
+            <li><a href="/public/howToUse">Como usar o MEnsinaKi</a></li>
+
+            <div class="spacer"></div>
+
+            <li><h3>Contato</h3></li>
+            <li><p>mensinaki@gmail.com</p></li>
+
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="form-container">
+            <h1>Cadastro de Detalhes do Tutor</h1>
+            <form action="/tutor/saveSigninDetails" method="post">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="tutorName" value="">
+                <br>
+                <br>
+
+                <label>Área de Aptidão</label>
+                <div class="radio-container">
+                    <th:block th:each="modelArea : ${areas}">
+                        <label class="radio-item">
+                            <input type="radio" th:value="${modelArea.areaId}" name="areaAptidao"/>
+                            <span th:text="${modelArea.areaName}"></span>
+                        </label>
+                    </th:block>
+                </div>
+                <br>
+
+                <label for="idade">Idade</label>
+                <input type="number" id="idade" name="idade" value="">
+                <br>
+                <br>
+
+                <label for="anosExperiencia">Anos de Experiência</label>
+                <input type="number" id="anosExperiencia" name="anosExperiencia" value="">
+
+                <button type="submit">Próximo</button>
+                <a href="/accessTryLogin">Voltar</a>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
