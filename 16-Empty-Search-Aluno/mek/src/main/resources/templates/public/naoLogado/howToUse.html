@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEK - Como Usar o MEnsinaKi</title>
+    <link th:href="@{/public/naoLogado/howToUse.css}" rel="stylesheet"/>
+</head>
+
+<body>
+    
+    <div class="sidebar">
+        <div class="sidebar-title">
+            <h3>Como Usar o MEnsinaKi</h3>
+        </div>
+        <ul>
+
+            <li><a href="/">Início</a></li>
+
+            <li><h3>Sobre</h3></li>
+            <li><a href="/public/whatIs">O que é o MEnsinaKi</a></li>
+            <li><a href="/public/howToUse">Como usar o MEnsinaKi</a></li>
+            
+            <div class="spacer"></div>
+            <li><h3>Contato</h3></li>
+            <li><p>mensinaki@gmail.com</p></li>
+        </ul>
+    </div>
+    
+    <div class="content">
+        <div class="row">
+            <div class="text-box-aluno">
+                <h3>Aluno</h3>
+                <p>
+                    Crie uma Solicitação e espere algum Tutor entrar em contato demonstrando interesse em lhe ensinar esse conteúdo.
+                </p>
+            </div>
+            <div class="image-box">
+                <img th:src="@{/images/Aluno1.jpg}" alt="" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-box-tutor">
+                <h3>Tutor</h3>
+                <p>
+                    Crie uma Sugestão e espere algum aluno entrar em contato demonstrando interesse em seu conteúdo.
+                </p>
+            </div>
+            <div class="image-box">
+                <img th:src="@{/images/Tutor1.jpg}" alt="" />
+            </div>
+        </div>
+
+        <a class="btn-link" href="/">Início</a>
+    </div>
+    
+</body>
+</html>
