@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEK - Criação de Sugestão</title>
+    <link th:href="@{/sugestao/tutor/create.css}" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="sidebar-title">
+        <h3>Criação de Sugestão</h3>
+    </div>
+    <ul>
+
+        <li><h3>Solicitações</h3></li>
+        <li><a href="/">Início</a></li>
+        <li><a href="/area/readAll">Outras Solicitações</a></li>
+
+        <li><h3>Sugestões</h3></li>
+        <li><a href="/sugestao/doCreate">Criar Sugestão</a></li>
+
+        <li>
+            <a th:href="@{/sugestao/readTutorList/{page}(page=${0})}">
+                Minhas Sugestões
+            </a>
+        </li>
+        
+        <li><h3>Acesso</h3></li>
+        <li><a href="/tutor/readOne">Perfil</a></li>
+        <li>
+            <form action="/accessLogout" method="post">
+                <button type="submit" class="logoutButton">Sair</button>
+            </form>
+        </li>
+
+        <div class="spacer"></div>
+        <li><h3>Sobre</h3></li>
+        <li><a href="/public/whatIs">O que é o MEnsinaKi</a></li>
+        <li><a href="/public/howToUse">Como usar o MEnsinaKi</a></li>
+
+        <li><h3>Contato</h3></li>
+        <li><p>mensinaki@gmail.com</p></li>
+    </ul>
+</div>
+
+<div class="content">
+    <div class="form-container">
+        <form action = "/sugestao/saveCreate" method="post">
+            <label for="title">Título</label>
+            <input type="text" id="title" name="title" value="">
+
+            <label for="modelo">Modelo</label>
+            <input type="text" id="modelo" name="modelo" value="">
+
+            <label for="local">Local</label>
+            <input type="text" id="local" name="local" value="">
+
+            <label for="price">Preço</label>
+            <input type="number" step="0.01" min="0" id="price" name="price" value="">
+            <br><br>
+
+            <label>Área</label>
+            <div class="radio-container">
+                <th:block th:each="modelArea : ${areas}">
+                    <label class="radio-item">
+                        <input type="radio" th:value="${modelArea.areaId}" name="areaId"/>
+                        <span th:text="${modelArea.areaName}"></span>
+                    </label>
+                </th:block>
+            </div>
+
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

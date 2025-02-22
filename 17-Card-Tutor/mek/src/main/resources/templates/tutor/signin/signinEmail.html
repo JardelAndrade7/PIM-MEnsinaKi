@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEK - Cadastro Email Tutor</title>
+    <link th:href="@{/tutor/signin/signinEmail.css}" rel="stylesheet"/>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-title">
+            <h3>Cadastro de Email do Tutor</h3>
+        </div>
+        <ul>
+            <li><a href="/">Início</a></li>
+
+            <li><h3>Sobre</h3></li>
+            <li><a href="/public/whatIs">O que é o MEnsinaKi</a></li>
+            <li><a href="/public/howToUse">Como usar o MEnsinaKi</a></li>
+
+            <div class="spacer"></div>
+            <li><h3>Contato</h3></li>
+            <li><p>mensinaki@gmail.com</p></li>
+
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="form-container">
+            <h1>Cadastro de Email do Tutor</h1>
+            <form action="/tutor/saveSigninEmail" method="post" th:object="${dtoTutorDetails}">
+                <label id="hidden" for="nome">Nome</label>
+                <input type="hidden" id="nome" name="tutorName" value="" th:field="*{tutorName}">
+
+                <label id="hidden">Área de Aptidão</label>
+                <input type="hidden" id="areaAptidao" name="areaAptidao" value="" th:field="*{areaAptidao}">
+
+                <label id="hidden" for="idade">Idade</label>
+                <input type="hidden" id="idade" name="idade" value="" th:field="*{idade}">
+
+                <label id="hidden" for="anosExperiencia">Anos de Experiência</label>
+                <input type="hidden" id="anosExperiencia" name="anosExperiencia" value="" th:field="*{anosExperiencia}">
+
+                <label for="tutorEmail">E-Mail</label>
+                <input type="email" id="tutorEmail" name="tutorEmail" value="">
+
+                <button type="submit">Próximo</button>
+                <a href="/accessTryLogin">Login</a>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,5 +1,0 @@
-16-Empty-Search-Aluno
-
-    Quando o aluno está no feed, se ele estiver em uma página e fizer uma busca vazia, ele é retornado para a mesma página.
-
-        Quando o aluno está no Minhas Solicitações, se ele estiver em uma página e fizer uma busca vazia, ele é retornado para a mesma página.
