@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="UTF-8">
+        <title>MEK - Erros Cadastro Aluno</title>
+        <link th:href="@{/aluno/signin/signinDetailsErrors.css}" rel="stylesheet"/>
+    </head>
+    <body>
+
+        <div class="sidebar">
+            <div class="sidebar-title">
+                <h3>Erros no Cadastro do Aluno</h3>
+            </div>
+            <ul>
+
+                <li><a href="/">Início</a></li>
+    
+                <li><h3>Sobre</h3></li>
+                <li><a href="/public/whatIs">O que é o MEnsinaKi</a></li>
+                <li><a href="/public/howToUse">Como usar o MEnsinaKi</a></li>
+    
+                <div class="spacer"></div>
+                <li><h3>Contato</h3></li>
+                <li><p>mensinaki@gmail.com</p></li>
+    
+            </ul>
+        </div>
+
+        <div class="centered-box">
+            <h1>Erros no Cadastro do Aluno</h1>
+            <ul>
+                <li th:each="error : ${errors}" th:text="${error.defaultMessage}"></li>
+            </ul>
+            <a href="/aluno/doSigninDetails" class="btn-link">Tentar de novo</a>
+        </div>
+    </body>
+</html>

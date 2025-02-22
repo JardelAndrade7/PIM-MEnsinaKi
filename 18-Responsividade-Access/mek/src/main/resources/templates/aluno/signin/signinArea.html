@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEK - Cadastro Área Aluno</title>
+    <link th:href="@{/aluno/signin/signinArea.css}" rel="stylesheet"/>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-title">
+            <h3>Cadastro de Área do Aluno</h3>
+        </div>
+        <ul>
+
+            <li><a href="/">Início</a></li>
+
+            <li><h3>Sobre</h3></li>
+            <li><a href="/public/whatIs">O que é o MEnsinaKi</a></li>
+            <li><a href="/public/howToUse">Como usar o MEnsinaKi</a></li>
+
+            <div class="spacer"></div>
+            <li><h3>Contato</h3></li>
+            <li><p>mensinaki@gmail.com</p></li>
+
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="form-container">
+            <h3>Cadastro de Área do Aluno</h3>
+
+            <form action="/aluno/saveSigninArea" method="post" th:object="${dtoAlunoSerie}">
+                <input type="hidden" id="nome" name="alunoName" value="" th:field="*{alunoName}">
+                <input type="hidden" id="idade" name="idade" value="" th:field="*{idade}">
+                <input type="hidden" id="serie" name="serie" value="" th:field="*{serie}">
+
+                <label>Área de Maior Dificuldade</label>
+                <div class="radio-container">
+                    <th:block th:each="modelArea : ${areas}">
+                        <label class="radio-item">
+                            <input type="radio" th:value="${modelArea.areaId}" name="areaDificuldade"/>
+                            <span th:text="${modelArea.areaName}"></span>
+                        </label>
+                    </th:block>
+                </div>
+                <br>
+
+                <button type="submit">Próximo</button>
+                <a href="/accessTryLogin">Login</a>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

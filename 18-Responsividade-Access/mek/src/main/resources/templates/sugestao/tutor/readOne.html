@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEK - Visualização de Sugestão</title>
+    <link th:href="@{/sugestao/tutor/readOne.css}" rel="stylesheet"/>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-title">
+            <h3>Visualização de Sugestão</h3>
+        </div>
+        <ul>
+    
+            <li><h3>Solicitações</h3></li>
+            <li><a href="/">Início</a></li>
+            <li><a href="/area/readAll">Outras Solicitações</a></li>
+    
+            <li><h3>Sugestões</h3></li>
+            <li><a href="/sugestao/doCreate">Criar Sugestão</a></li>
+    
+            <li>
+                <a th:href="@{/sugestao/readTutorList/{page}(page=${0})}">
+                    Minhas Sugestões
+                </a>
+            </li>
+            
+            <li><h3>Acesso</h3></li>
+            <li><a href="/tutor/readOne">Perfil</a></li>
+            <li>
+                <form action="/accessLogout" method="post">
+                    <button type="submit" class="logoutButton">Sair</button>
+                </form>
+            </li>
+    
+            <div class="spacer"></div>
+            <li><h3>Sobre</h3></li>
+            <li><a href="/public/whatIs">O que é o MEnsinaKi</a></li>
+            <li><a href="/public/howToUse">Como usar o MEnsinaKi</a></li>
+    
+            <li><h3>Contato</h3></li>
+            <li><p>mensinaki@gmail.com</p></li>
+        </ul>
+    </div>
+
+    <div class="details">
+        <h1>Detalhes da Sugestão</h1>
+        <p><strong>Título:</strong> <span th:text="${sugestao.title}"></span></p>
+        <p><strong>Modelo:</strong> <span th:text="${sugestao.modelo}"></span></p>
+        <p><strong>Local:</strong> <span th:text="${sugestao.local}"></span></p>
+        <p><strong>Preço:</strong> <span th:text="${sugestao.price}"></span></p>
+        <a th:href="@{/sugestao/doUpdate/{sugestaoId}(sugestaoId=${sugestao.sugestaoId})}" class="btn-link">Atualizar Detalhes</a>
+
+        <h3 class="area-title">Área da Sugestão</h3>
+        <p><strong>Área:</strong> <span th:text="${areaSugestao.areaName}"></span></p>
+        <a th:href="@{/sugestao/doUpdateArea/{sugestaoId}(sugestaoId=${sugestao.sugestaoId})}" class="btn-link">Atualizar Área</a>
+    </div>
+
+</body>
+</html>

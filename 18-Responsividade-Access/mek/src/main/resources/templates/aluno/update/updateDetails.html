@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEK - Atualização Detalhes Aluno</title>
+    <link th:href="@{/aluno/update/updateDetails.css}" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="sidebar-title">
+        <h3>Atualização dos Detalhes do Aluno</h3>
+    </div>
+    <ul>
+
+        <li><h3>Sugestões</h3></li>
+        <li><a href="/">Início</a></li>
+        <li><a href="/area/readAll">Outras Sugestões</a></li>
+
+        <li><h3>Solicitações</h3></li>
+        <li><a href="/solicitacao/doCreate">Criar Solicitação</a></li>
+
+        <li>
+            <a th:href="@{/solicitacao/readAlunoList/{page}(page=${0})}">
+                Minhas Solicitações
+            </a>
+        </li>
+        
+        <li><h3>Acesso</h3></li>
+        <li><a href="/aluno/readOne">Perfil</a></li>
+        <li>
+            <form action="/accessLogout" method="post">
+                <button type="submit" class="logoutButton">Sair</button>
+            </form>
+        </li>
+
+        <div class="spacer"></div>
+        <li><h3>Sobre</h3></li>
+        <li><a href="/public/whatIs">O que é o MEnsinaKi</a></li>
+        <li><a href="/public/howToUse">Como usar o MEnsinaKi</a></li>
+
+        <li><h3>Contato</h3></li>
+        <li><p>mensinaki@gmail.com</p></li>
+    </ul>
+</div>
+
+<div class="content">
+    <div class="form-container">
+        <form action = "/aluno/saveUpdateDetails" method="post" th:object="${modelAluno}">
+
+            <input type="hidden" name="alunoId" th:field="*{alunoId}">
+
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="alunoName" th:field="*{alunoName}">
+
+            <label for="idade">Idade</label>
+            <input type="number" id="idade" name="idade" th:field="*{idade}">
+
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
